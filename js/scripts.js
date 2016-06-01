@@ -234,6 +234,8 @@ function death(num) {
 				score = 0;
 				snake.x = 1;
 				snake.y = 1;
+				lives = 3;
+				updateLives();
 				current_world = 0;
 				world = world_storage;
 				world_storage = jQuery.extend(true, {}, world);
