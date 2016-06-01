@@ -82,7 +82,7 @@ var world = [
 	]
 ];
 
-var current_world = 4;
+var current_world = 0;
 
 var world_storage = jQuery.extend(true, {}, world);
 
