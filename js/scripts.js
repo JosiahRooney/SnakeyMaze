@@ -219,10 +219,7 @@ function death(num) {
 		//lowLag.play('game_over.wav');
 		alert("Game over!!");
 		$('#snake').hide();
-		$('#enemy').remove();
-		$('.item img').remove();
-		$('.segment').remove();
-		$('.enemy_box img').remove();
+		$('#enemy, .item img, .segment, .enemy_box img').remove();
 		$('.enemy_box').addClass('empty').removeClass('enemy_box');
 		setTimeout(function(){
 			var newGame = confirm('New game?');
@@ -230,13 +227,9 @@ function death(num) {
 				// New game
 				$('#snake').show();
 				$('.segment').remove();
-				seg = 0;
-				score = 0;
-				snake.x = 1;
-				snake.y = 1;
-				lives = 3;
-				updateLives();
-				current_world = 0;
+				seg = score = current_world = 0;
+				snake.x = snake.y = 1;
+				updateLives(3);
 				world = world_storage;
 				world_storage = jQuery.extend(true, {}, world);
 				buildWorld();
