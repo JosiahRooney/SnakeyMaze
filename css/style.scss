@@ -36,7 +36,8 @@ div.row {
 	}
 	.brick {
 		background: rgba(0, 0, 0, 0) url("../img/wall_gray.png") repeat scroll 0 0;
-		border-bottom: 8px solid #000;
+		border-bottom: 8px solid transparent;
+		border-image: url("../img/wall_gray_dark.png") 20 stretch;
 		height: 48px;
 		margin-top: -8px;
 		position: relative;
