@@ -20,7 +20,8 @@ body {
   background-color: #000;
   margin: 0;
   color: #fff;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  overflow: hidden; }
 
 div.row div {
   width: 40px;
@@ -45,19 +46,21 @@ div.row .item {
     margin-top: -8px;
     margin-left: -8px;
     position: relative;
-    box-shadow: 0 0 5px 3px #ff7a37;
-    border-radius: 50%; }
+    box-shadow: 0 0 5px 3px #ff7d00;
+    border-radius: 50%;
+    width: 15px;
+    height: auto; }
 div.row .bonus {
   background: url("../img/bonus.gif") no-repeat center; }
 div.row .gap {
-  background-color: #000; }
+  background-color: transparent; }
 div.row .empty {
   background-image: url("../img/wall_gray_dark.png");
   background-size: 40px 40px; }
 
 .game {
   position: relative;
-  margin: 95px auto 0;
+  margin: 135px auto 0;
   width: 1200px; }
 
 .game_title {
@@ -67,7 +70,30 @@ div.row .empty {
   font-size: 3rem;
   letter-spacing: 1.4px;
   font-family: 'Fredoka One', cursive;
-  font-weight: 100; }
+  font-weight: 100;
+  color: black;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+  .game_title:before {
+    content: "SnakeyMaze";
+    background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    position: absolute;
+    text-shadow: none;
+    left: 0; }
+
+#world {
+  display: inline-block; }
+
+#bgvid {
+  min-width: 2000px;
+  min-height: 1500px;
+  position: absolute;
+  margin-top: -160px;
+  opacity: 0.7;
+  margin-left: -200px; }
 
 #snake {
   top: 40px;
@@ -152,11 +178,7 @@ div.row .empty {
 
 .score p {
   font-family: 'Fredoka One', cursive;
-  display: inline-block;
-  width: 50%;
   font-size: 2rem;
   font-weight: 100; }
-  .score p:last-child {
-    text-align: right; }
 
 /*# sourceMappingURL=style.css.map */

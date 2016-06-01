@@ -18,9 +18,20 @@
 	<meta property="og:image" content="http://rooneydev.com/games/snakey-maze/snakey-maze.png" />
 	<meta property="og:description" content="SnakeyMaze. A simple JavaScript game built by Josiah Rooney." />
 
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script>
+		function refreshGameSize () {
+			var gameWidth = $('#world').width();
+			$('.game').css('width',gameWidth);
+		}
+	</script>
 </head>
 <body>
+	<video autoplay loop id="bgvid">
+	    <source src="fx/background_blue.mp4" type="video/mp4">
+	</video>
 	<div class="game">
 		<h1 class="game_title">SnakeyMaze</h1>
 		<div class="snake" id="snake"><img src="img/face.png"></div>
@@ -29,9 +40,9 @@
 		<div class="score">
 			<p>
 				Score: <span id="score"></span><br>
-				High Score: <span id="high_score"></span>
-			</p><!-- 
-		--><p>Lives: <span id="lives"></span></p>
+				High Score: <span id="high_score"></span><br>
+				Lives: <span id="lives"></span>
+			</p>
 		<div class="audio">
 			<audio id="theme_music" autoplay loop>
 				<source src="fx/snake.mp3" type="audio/mpeg">
@@ -47,5 +58,13 @@
 <script src="js/soundmanager2-nodebug-jsmin.js"></script>
 
 <script src="js/scripts.js"></script>
+
+<script>
+	jQuery(function($) {
+		$(document).ready(function() {
+			
+		});
+	});
+</script>
 </body>
 </html>
