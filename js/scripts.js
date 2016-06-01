@@ -119,6 +119,7 @@ function displayEnemy() {
 
 function buildWorld() {
 	var output = "";
+	showEnemy();
 
 	for (var i = 0; i < world[current_world].length; i++) {
 		output += "\n<div class='row'>";
