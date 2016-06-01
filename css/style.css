@@ -1,0 +1,161 @@
+/* latin */
+@font-face {
+  font-family: 'Chewy';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Chewy"), url(https://fonts.gstatic.com/s/chewy/v7/rb3O4cUMVLYzfgbaJOdJHw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+/* latin */
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Fredoka One"), local("FredokaOne-Regular"), url(https://fonts.gstatic.com/s/fredokaone/v4/SL0aFUFfkFMMdariYQ3_YY4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+* {
+  box-sizing: border-box;
+  vertical-align: top; }
+
+body {
+  background-color: #000;
+  margin: 0;
+  color: #fff;
+  font-family: sans-serif; }
+
+div.row div {
+  width: 40px;
+  height: 40px;
+  display: inline-block; }
+div.row .brick {
+  background: transparent url("../img/wall_gray.png") repeat scroll 0 0;
+  border-bottom: 8px solid #000;
+  height: 48px;
+  margin-top: -8px;
+  position: relative;
+  z-index: 9; }
+div.row .egg {
+  background: url("../img/egg.gif") no-repeat center; }
+div.row .item {
+  background-image: url("../img/wall_gray_dark.png");
+  background-size: 40px 40px; }
+  div.row .item img {
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+    position: relative;
+    box-shadow: 0 0 5px 3px #ff7a37;
+    border-radius: 50%; }
+div.row .bonus {
+  background: url("../img/bonus.gif") no-repeat center; }
+div.row .gap {
+  background-color: #000; }
+div.row .empty {
+  background-image: url("../img/wall_gray_dark.png");
+  background-size: 40px 40px; }
+
+.game {
+  position: relative;
+  margin: 95px auto 0;
+  width: 1200px; }
+
+.game_title {
+  position: absolute;
+  margin: 0;
+  top: -78px;
+  font-size: 3rem;
+  letter-spacing: 1.4px;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 100; }
+
+#snake {
+  top: 40px;
+  left: 40px; }
+  #snake img {
+    width: 46px;
+    height: auto;
+    position: relative;
+    top: -5px;
+    left: -5px; }
+
+#enemy {
+  position: absolute;
+  width: 40px;
+  height: 40px; }
+  #enemy img {
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -12px;
+    z-index: 9; }
+  #enemy:after {
+    content: " ";
+    width: 28px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    bottom: 0;
+    left: 0;
+    margin-left: 6px;
+    position: absolute;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94000000', endColorstr='#00000000',GradientType=1 ); }
+
+.enemy_box {
+  position: relative; }
+  .enemy_box img {
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -12px;
+    z-index: 9; }
+  .enemy_box:after {
+    content: " ";
+    width: 28px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    bottom: 0;
+    left: 0;
+    margin-left: 6px;
+    position: absolute;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 48%, transparent 75%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94000000', endColorstr='#00000000',GradientType=1 ); }
+
+.segment,
+#snake {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  z-index: 0;
+  margin-top: 1.5px;
+  margin-left: 1.5px; }
+
+.segment {
+  height: 26px;
+  width: 26px;
+  margin-top: 7px;
+  margin-left: 7px;
+  background-color: #00A388;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4); }
+
+.segment_box,
+.enemy_box {
+  background-image: url("../img/wall_gray_dark.png");
+  background-size: 40px 40px; }
+
+.score p {
+  font-family: 'Fredoka One', cursive;
+  display: inline-block;
+  width: 50%;
+  font-size: 2rem;
+  font-weight: 100; }
+  .score p:last-child {
+    text-align: right; }
+
+/*# sourceMappingURL=style.css.map */

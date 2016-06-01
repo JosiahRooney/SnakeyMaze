@@ -1,1 +1,1 @@
-# SnakeyMaze
+# PacMan
